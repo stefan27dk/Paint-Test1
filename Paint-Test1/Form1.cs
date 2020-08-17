@@ -13,42 +13,73 @@ namespace Paint_Test1
     public partial class Form1 : Form
     {
 
-        Graphics g;
-        Pen pen1;
-
-    
+        public Point current = new Point();
+        public Point old = new Point();
+        public Pen pen1 = new Pen(Color.Red, 5);
+        public Graphics g;
+        public bool isMouseMoving = false;
         
+
+
+
+        // Initialize
         public Form1()
         {
-            g = panel1.CreateGraphics();
             InitializeComponent();
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            pen1 = new Pen(Color.Red, 10);
-            pen1.StartCap = pen1.EndCap = System.Drawing.Drawing2D.LineCap.Round;
+            g = panel1.CreateGraphics();
+            pen1.SetLineCap(System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.DashCap.Round);
         }
 
 
-        // Mouse Move - Panel
-        private void panel1_MouseMove(object sender, MouseEventArgs e)
-        {
-             
-            if (e.Button == MouseButtons.Left)
-            {
-                g.DrawLine(pen1, new Point(e.X, e.Y), new Point(e.Location.X -1, e.Location.Y -1));
-           
-            }
 
-            
-        }
 
+
+        // Load
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+
+
+
+
+        // Mouse Move - Panel
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
+            isMouseMoving = true;
+
+            if (e.Button == MouseButtons.Left)
+            {
+                current = e.Location;
+                g.DrawLine(pen1, old, current);
+                old = current;
+            }
+
+            isMouseMoving = false;
 
         }
+
+
+
+     
+     
+
+
+
+        // Mouse Down
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if(isMouseMoving == false)
+            {
+                g.DrawLine(pen1, e.Location, new Point(e.Location.X-10, e.Location.Y-10));
+            }
+
+            old = e.Location;
+        }
+
+
+
+
     }
 }

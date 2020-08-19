@@ -94,16 +94,17 @@ namespace GUI
         // Top mesuring
         private void top_mesuring_pictureBox_Paint(object sender, PaintEventArgs e)
         {
-            
 
-           Graphics g = e.Graphics;
+           
+           
+                Graphics g = e.Graphics;
 
-              
-            for (int x = 50; x < top_mesuring_pictureBox.Width; x += 100)  // Start at 50px. and draw line every 100px till it reaches the Picturebox end "Lenght"
-            {
-                g.DrawLine(new Pen(new SolidBrush(Color.Red), 3.0f), new Point(x,0), new Point(x,20)); // Pen is drawing the outter and Brush is filling the inner
-            }
 
+                for (int x = 50; x < top_mesuring_pictureBox.Width; x += 100)  // Start at 50px. and draw line every 100px till it reaches the Picturebox end "Lenght"
+                {
+                    g.DrawLine(new Pen(new SolidBrush(Color.Red), 3.0f), new Point(x, 0), new Point(x, 20)); // Pen is drawing the outter and Brush is filling the inner
+                }
+          
 
 
             //// ----------------
@@ -121,7 +122,7 @@ namespace GUI
             //    g.DrawLine(new Pen(new SolidBrush(Color.Red), 1.0f), new Point(x, 0), new Point(x, 5));
             //}
 
-            //g.DrawLine(new Pen(new SolidBrush(Color.Red), 2.0f), new Point(ruller_Location.X, 0), new Point(ruller_Location.X, 10));
+                //g.DrawLine(new Pen(new SolidBrush(Color.Red), 2.0f), new Point(ruller_Location.X, 0), new Point(ruller_Location.X, 10));
         }
 
 
@@ -303,23 +304,7 @@ namespace GUI
         private void right_tool_panel_Paint(object sender, PaintEventArgs e)
         {
 
-            //BORDER -  Right Tool Panel
-            //if (right_tool_panel.BorderStyle == BorderStyle.FixedSingle && Right_Tool_panel_Is_Resizing == false)
-            //{
-
-            //    int thickness = 1;
-            //    int halfThickness = thickness / 2;
-            //    using (Pen Pen_Bo = new Pen(Color.FromArgb(84, 89, 97), thickness))
-            //    {
-            //        e.Graphics.DrawRectangle(Pen_Bo, new Rectangle(halfThickness, halfThickness,
-            //            right_tool_panel.ClientSize.Width - thickness, right_tool_panel.ClientSize.Height - thickness));
-
-            //    }
-
-            //}
-
-
-
+        
 
             // Left Border - "Dragger"
             using (Pen Pen_Lb = new Pen(Color.FromArgb(84, 89, 97), 15))
@@ -352,16 +337,7 @@ namespace GUI
         // Size Changed - Right Tool Panel      // Used for removing flickering
         private void right_tool_panel_SizeChanged(object sender, EventArgs e)
         {
-            //right_tool_panel.Refresh();
-            //if (this != null)
-            //{
-            //    this.Invalidate(); // Remove Border Ínproper Show   
-            //    right_tool_panel.Parent.Refresh();
-
-
-            //}
-
-
+          
         }
 
 
@@ -372,11 +348,6 @@ namespace GUI
         // Resize - Right Tool Panel 
         private void right_tool_panel_Resize(object sender, EventArgs e)
         {
-            //right_tool_panel.Refresh();
-            //if (this != null)
-            //{
-            //    this.Invalidate(); // Remove Border Ínproper Show    
-            //}
             
         }
 

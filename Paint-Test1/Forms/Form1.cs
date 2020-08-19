@@ -27,7 +27,7 @@ namespace GUI
 
 
         // Right Tool Panel Size
-        Size right_tool_panel_Last_size;
+        public Size right_tool_panel_Last_size = new Size();
         bool right_panel_resized = false;
 
 
@@ -182,15 +182,16 @@ namespace GUI
             if(auto_Resize_Right_Tool_panel == true)
             {
 
-                if(this.Width <= 800 && right_tool_panel.Width >= 100)
+                if(this.Width <= 800 && right_tool_panel.Width >= 100 && right_panel_resized != true)
                 {
-                    right_tool_panel_Last_size = right_tool_panel.Size; // Remember last Size
-                    right_tool_panel.Width = 99;
+                    right_tool_panel_Last_size.Width = right_tool_panel.Width; // Remember last Size
+                    right_tool_panel.Width = 90;
                     right_panel_resized = true;
                 }
                
                 else if(this.Width >= 800 && right_panel_resized == true)
                 {
+
                     right_tool_panel.Width = right_tool_panel_Last_size.Width;
                     right_panel_resized = false;
                 }

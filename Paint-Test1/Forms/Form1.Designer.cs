@@ -33,6 +33,13 @@ namespace GUI
             this.right_tool_panel = new System.Windows.Forms.Panel();
             this.autoResize_Right_Tool_Panel_checkBox = new System.Windows.Forms.CheckBox();
             this.top_tool_panel = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fIleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.effectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.left_tool_panel = new System.Windows.Forms.Panel();
             this.left_mesuring_pictureBox = new System.Windows.Forms.PictureBox();
             this.top_mesuring_pictureBox = new System.Windows.Forms.PictureBox();
@@ -40,6 +47,8 @@ namespace GUI
             this.workplace_pictureBox = new System.Windows.Forms.PictureBox();
             this.bottom_info_panel = new System.Windows.Forms.Panel();
             this.right_tool_panel.SuspendLayout();
+            this.top_tool_panel.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.left_mesuring_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.top_mesuring_pictureBox)).BeginInit();
             this.main_holder_panel.SuspendLayout();
@@ -84,11 +93,63 @@ namespace GUI
             // top_tool_panel
             // 
             this.top_tool_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.top_tool_panel.Controls.Add(this.menuStrip1);
             this.top_tool_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.top_tool_panel.Location = new System.Drawing.Point(0, 0);
             this.top_tool_panel.Name = "top_tool_panel";
             this.top_tool_panel.Size = new System.Drawing.Size(1357, 69);
             this.top_tool_panel.TabIndex = 3;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fIleToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.imageToolStripMenuItem,
+            this.effectsToolStripMenuItem,
+            this.viewToolStripMenuItem,
+            this.windowsToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1357, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fIleToolStripMenuItem
+            // 
+            this.fIleToolStripMenuItem.Name = "fIleToolStripMenuItem";
+            this.fIleToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fIleToolStripMenuItem.Text = "FIle";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // imageToolStripMenuItem
+            // 
+            this.imageToolStripMenuItem.Name = "imageToolStripMenuItem";
+            this.imageToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.imageToolStripMenuItem.Text = "Image";
+            // 
+            // effectsToolStripMenuItem
+            // 
+            this.effectsToolStripMenuItem.Name = "effectsToolStripMenuItem";
+            this.effectsToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.effectsToolStripMenuItem.Text = "Effects";
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "View";
+            // 
+            // windowsToolStripMenuItem
+            // 
+            this.windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
+            this.windowsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.windowsToolStripMenuItem.Text = "Windows";
             // 
             // left_tool_panel
             // 
@@ -102,11 +163,12 @@ namespace GUI
             // 
             // left_mesuring_pictureBox
             // 
-            this.left_mesuring_pictureBox.BackColor = System.Drawing.Color.Navy;
+            this.left_mesuring_pictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
+            this.left_mesuring_pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.left_mesuring_pictureBox.Dock = System.Windows.Forms.DockStyle.Left;
-            this.left_mesuring_pictureBox.Location = new System.Drawing.Point(121, 96);
+            this.left_mesuring_pictureBox.Location = new System.Drawing.Point(121, 94);
             this.left_mesuring_pictureBox.Name = "left_mesuring_pictureBox";
-            this.left_mesuring_pictureBox.Size = new System.Drawing.Size(37, 635);
+            this.left_mesuring_pictureBox.Size = new System.Drawing.Size(25, 637);
             this.left_mesuring_pictureBox.TabIndex = 5;
             this.left_mesuring_pictureBox.TabStop = false;
             // 
@@ -117,7 +179,7 @@ namespace GUI
             this.top_mesuring_pictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.top_mesuring_pictureBox.Location = new System.Drawing.Point(121, 69);
             this.top_mesuring_pictureBox.Name = "top_mesuring_pictureBox";
-            this.top_mesuring_pictureBox.Size = new System.Drawing.Size(1001, 27);
+            this.top_mesuring_pictureBox.Size = new System.Drawing.Size(1001, 25);
             this.top_mesuring_pictureBox.TabIndex = 6;
             this.top_mesuring_pictureBox.TabStop = false;
             this.top_mesuring_pictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.top_mesuring_pictureBox_Paint);
@@ -141,9 +203,9 @@ namespace GUI
             // workplace_pictureBox
             // 
             this.workplace_pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.workplace_pictureBox.Location = new System.Drawing.Point(158, 96);
+            this.workplace_pictureBox.Location = new System.Drawing.Point(146, 94);
             this.workplace_pictureBox.Name = "workplace_pictureBox";
-            this.workplace_pictureBox.Size = new System.Drawing.Size(964, 635);
+            this.workplace_pictureBox.Size = new System.Drawing.Size(976, 637);
             this.workplace_pictureBox.TabIndex = 7;
             this.workplace_pictureBox.TabStop = false;
             this.workplace_pictureBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.workplace_pictureBox_MouseDown);
@@ -165,6 +227,7 @@ namespace GUI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1357, 758);
             this.Controls.Add(this.main_holder_panel);
+            this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(450, 500);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -172,6 +235,10 @@ namespace GUI
             this.Resize += new System.EventHandler(this.Form1_Resize);
             this.right_tool_panel.ResumeLayout(false);
             this.right_tool_panel.PerformLayout();
+            this.top_tool_panel.ResumeLayout(false);
+            this.top_tool_panel.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.left_mesuring_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.top_mesuring_pictureBox)).EndInit();
             this.main_holder_panel.ResumeLayout(false);
@@ -190,6 +257,13 @@ namespace GUI
         private System.Windows.Forms.PictureBox workplace_pictureBox;
         private System.Windows.Forms.CheckBox autoResize_Right_Tool_Panel_checkBox;
         private System.Windows.Forms.Panel bottom_info_panel;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fIleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem effectsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem windowsToolStripMenuItem;
     }
 }
 

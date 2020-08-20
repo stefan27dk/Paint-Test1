@@ -102,8 +102,8 @@ namespace GUI
 
             // Draw - "0" ::::::::::::START:::::::::::::::::::::::::::::::::::::::::::
             g.DrawLine(new Pen(new SolidBrush(Color.Orange), 2.0f), new Point(0, 0), new Point(8, 8)); // The "\"
-            g.DrawLine(new Pen(new SolidBrush(Color.Orange), 1.0f), new Point(23, 0), new Point(23, 25)); // The "|"
-            g.DrawLine(new Pen(new SolidBrush(Color.Orange), 1.0f), new Point(0, 22), new Point(23, 22)); // The "--"
+            g.DrawLine(new Pen(new SolidBrush(Color.Orange), 2.0f), new Point(23, 0), new Point(23, 25)); // The "|"
+            g.DrawLine(new Pen(new SolidBrush(Color.Orange), 2.0f), new Point(0, 22), new Point(23, 22)); // The "--"
 
             // Draw Text 
             using (Font font1 = new Font("Verdana", 12, FontStyle.Bold, GraphicsUnit.Pixel))
@@ -112,17 +112,30 @@ namespace GUI
                 e.Graphics.DrawString("0", font1, Brushes.Orange, pointF);  // The "0"
             }
             everySecond_Num = 0; // Every Second = 0
-            // Draw - "0" ::::::::::::END:::::::::::::::::::::::::::::::::::::::::::
+                                 // Draw - "0" ::::::::::::END:::::::::::::::::::::::::::::::::::::::::::
 
+            //----------------------------------------------------------------
+            // Draw Small Lines
+            for (int x1 = 25; x1 < top_mesuring_pictureBox.Width; x1 += 25)
+            {
+                // Draw Line - Small
+                g.DrawLine(new Pen(new SolidBrush(Color.Red), 1.0f), new Point(x1, 0), new Point(x1, 3)); // Pen is drawing the outter and Brush is filling the inner
+
+            }
+            //----------------------------------------------------------------
 
 
 
             // Mesure  
             for (int x = 50; x < top_mesuring_pictureBox.Width; x += 50)  // Start at 50px. and draw line every 100px till it reaches the Picturebox end "Lenght"
             {    
+                    
+
                 if(everySecond_Num != 0)
                 {
-                    // Draw Line - First - Blue
+                    //----------------------------------------------------------------
+
+                    // Draw Line - Second - Green
                     g.DrawLine(new Pen(new SolidBrush(Color.Lime), 1.0f), new Point(x, 0), new Point(x, 20)); // Pen is drawing the outter and Brush is filling the inner
 
                     // Draw Text 
@@ -132,11 +145,14 @@ namespace GUI
                         e.Graphics.DrawString(x.ToString(), font1, Brushes.Lime, pointF);
                     }
                     everySecond_Num = 0; // Every Second = 0
+                    //----------------------------------------------------------------
+
                 }
 
                 else
                 {
-                    // Draw Line - Second - Green
+                    //----------------------------------------------------------------
+                    // Draw Line - First Blue
                     g.DrawLine(new Pen(new SolidBrush(Color.Aqua), 2.0f), new Point(x, 0), new Point(x, 10)); // Pen is drawing the outter and Brush is filling the inner
 
 
@@ -147,10 +163,12 @@ namespace GUI
                         e.Graphics.DrawString(x.ToString(), font1, Brushes.Aqua, pointF);
                     }
                     everySecond_Num++; // Every Second ++
+                    //----------------------------------------------------------------
+
                 }
 
 
-              
+
 
 
             }

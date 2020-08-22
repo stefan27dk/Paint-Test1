@@ -24,6 +24,7 @@ namespace GUI
 
         // Mesure
         public Point ruller_Location;
+      
 
 
         // Right Tool Panel Size
@@ -94,16 +95,19 @@ namespace GUI
         // TOP MESURING-::::::::::::::::START:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  
         private void top_mesuring_pictureBox_Paint(object sender, PaintEventArgs e)
         {
-              
-           Graphics g = e.Graphics;  // Graphics of the Top Mesuring PictureBox
-           int everySecond_Num = 0; // Change Color Every Second
+
+            // Ruller - Moving Line Top
+            e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Blue), 5.0f), new Point(ruller_Location.X + 25, 0), new Point(ruller_Location.X + 25, 25));
+
+
+            int everySecond_Num = 0; // Change Color Every Second
 
 
 
             // Draw - "0" --------::START::-----------------------------------
-            g.DrawLine(new Pen(new SolidBrush(Color.Orange), 2.0f), new Point(0, 0), new Point(8, 8)); // The "\"
-            g.DrawLine(new Pen(new SolidBrush(Color.Orange), 2.0f), new Point(23, 0), new Point(23, 25)); // The "|"
-            g.DrawLine(new Pen(new SolidBrush(Color.Orange), 2.0f), new Point(0, 23), new Point(23, 23)); // The "--"
+            e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Orange), 2.0f), new Point(0, 0), new Point(8, 8)); // The "\"
+            e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Orange), 2.0f), new Point(23, 0), new Point(23, 25)); // The "|"
+            e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Orange), 2.0f), new Point(0, 23), new Point(23, 23)); // The "--"
 
             // Draw Text 
             using (Font font1 = new Font("Verdana", 12, FontStyle.Bold, GraphicsUnit.Pixel))
@@ -111,7 +115,7 @@ namespace GUI
                 PointF pointF = new PointF(8, 5);
                 e.Graphics.DrawString("0", font1, Brushes.Orange, pointF);  // The "0"
             }
-            everySecond_Num = 0; // Every Second = 0
+            
             // Draw - "0" --------::END::-----------------------------------------
 
 
@@ -123,7 +127,7 @@ namespace GUI
             for (int x1 = 23; x1 < top_mesuring_pictureBox.Width; x1 += 25)
             {
                 // Draw Line - Small
-                g.DrawLine(new Pen(new SolidBrush(Color.Red), 1.0f), new Point(x1, 0), new Point(x1, 3)); // Pen is drawing the outter and Brush is filling the inner
+                e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Red), 1.0f), new Point(x1, 0), new Point(x1, 3)); // Pen is drawing the outter and Brush is filling the inner
 
             }
             //--------------------------------------------------------------------------------------------
@@ -143,7 +147,7 @@ namespace GUI
                 {
 
                     //-----------Draw Line - First BLUE-----------------------------------------------------  
-                    g.DrawLine(new Pen(new SolidBrush(Color.Aqua), 1.0f), new Point(x, 0), new Point(x, 10)); // Pen is drawing the outter and Brush is filling the inner
+                    e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Aqua), 1.0f), new Point(x, 0), new Point(x, 10)); // Pen is drawing the outter and Brush is filling the inner
 
 
                     // Draw Text 
@@ -161,7 +165,7 @@ namespace GUI
                 {
 
                     ////----------------Draw Line - Second - Green-----------------------------------------  
-                    g.DrawLine(new Pen(new SolidBrush(Color.Lime), 1.0f), new Point(x, 0), new Point(x, 20)); // Pen is drawing the outter and Brush is filling the inner
+                    e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Lime), 1.0f), new Point(x, 0), new Point(x, 20)); // Pen is drawing the outter and Brush is filling the inner
 
                     //// Draw Text 
                     using (Font font1 = new Font("Verdana", 12, FontStyle.Bold, GraphicsUnit.Pixel))
@@ -174,8 +178,11 @@ namespace GUI
 
                 }
 
+              
             }
 
+
+           
 
 
 
@@ -231,7 +238,11 @@ namespace GUI
         //-------------Draw Small Lines---Vertical------------------------------------------------------------   
         private void left_mesuring_pictureBox_Paint(object sender, PaintEventArgs e)
         {
-            
+
+            // Ruller - Moving Line Left
+            e.Graphics.DrawLine(new Pen(Color.Red, 15.0f), new Point(0, ruller_Location.Y), new Point(15, ruller_Location.Y));
+
+
 
 
             int every_Second_Vertical = 0;
@@ -240,7 +251,7 @@ namespace GUI
             for (int y = 24; y < left_mesuring_pictureBox.Height; y += 25)
             {
                e.Graphics.DrawLine(new Pen(Color.Red, 1.0f), new Point(0,y), new Point(5,y));
-
+                 
             }
 
 
@@ -253,7 +264,7 @@ namespace GUI
                         e.Graphics.DrawLine(new Pen(Color.Aqua, 1.0f), new Point(0, y2), new Point(10 ,y2)); // Line Blue Vertical
 
 
-                       //// Draw Text 
+                       //// Draw Text - Blue - Vertical
                        using (Font font1 = new Font("Verdana", 11, FontStyle.Bold, GraphicsUnit.Pixel))
                        {
 
@@ -274,7 +285,7 @@ namespace GUI
                        e.Graphics.DrawLine(new Pen(Color.Lime, 1.0f), new Point(0, y2), new Point(20, y2));
 
 
-                        //// Draw Text 
+                        // Draw Text  - Green - Vertical
                         using (Font font1 = new Font("Verdana", 12, FontStyle.Bold, GraphicsUnit.Pixel))
                         {
                        
@@ -293,6 +304,9 @@ namespace GUI
 
 
                }
+
+  
+
 
         }
         // Left MESURING-::::::::::::::::END:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  
@@ -331,6 +345,12 @@ namespace GUI
                 g.DrawLine(pen1, old, current);
                 old = current;
             }
+
+            // Ruller Location moves on Mouse Move Top and Left - MesurePictureBoxes
+            ruller_Location = new Point(e.X, e.Y );
+            top_mesuring_pictureBox.Invalidate();
+            left_mesuring_pictureBox.Invalidate();
+
             isMouseMoving = false;
         }
 

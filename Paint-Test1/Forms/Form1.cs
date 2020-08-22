@@ -91,7 +91,7 @@ namespace GUI
 
 
 
-        // TOP MESURING-------------------------::START::  
+        // TOP MESURING-::::::::::::::::START:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  
         private void top_mesuring_pictureBox_Paint(object sender, PaintEventArgs e)
         {
               
@@ -100,10 +100,10 @@ namespace GUI
 
 
 
-            // Draw - "0" ::::::::::::START:::::::::::::::::::::::::::::::::::::::::::
+            // Draw - "0" --------::START::-----------------------------------
             g.DrawLine(new Pen(new SolidBrush(Color.Orange), 2.0f), new Point(0, 0), new Point(8, 8)); // The "\"
             g.DrawLine(new Pen(new SolidBrush(Color.Orange), 2.0f), new Point(23, 0), new Point(23, 25)); // The "|"
-            g.DrawLine(new Pen(new SolidBrush(Color.Orange), 2.0f), new Point(0, 22), new Point(23, 22)); // The "--"
+            g.DrawLine(new Pen(new SolidBrush(Color.Orange), 2.0f), new Point(0, 23), new Point(23, 23)); // The "--"
 
             // Draw Text 
             using (Font font1 = new Font("Verdana", 12, FontStyle.Bold, GraphicsUnit.Pixel))
@@ -112,64 +112,67 @@ namespace GUI
                 e.Graphics.DrawString("0", font1, Brushes.Orange, pointF);  // The "0"
             }
             everySecond_Num = 0; // Every Second = 0
-                                 // Draw - "0" ::::::::::::END:::::::::::::::::::::::::::::::::::::::::::
+            // Draw - "0" --------::END::-----------------------------------------
 
-            //----------------------------------------------------------------
-            // Draw Small Lines
-            for (int x1 = 25; x1 < top_mesuring_pictureBox.Width; x1 += 25)
+
+
+
+
+
+            //-------------Draw Small Lines------Horizontal---------------------------------------------------------   
+            for (int x1 = 23; x1 < top_mesuring_pictureBox.Width; x1 += 25)
             {
                 // Draw Line - Small
                 g.DrawLine(new Pen(new SolidBrush(Color.Red), 1.0f), new Point(x1, 0), new Point(x1, 3)); // Pen is drawing the outter and Brush is filling the inner
 
             }
-            //----------------------------------------------------------------
+            //--------------------------------------------------------------------------------------------
 
 
 
-            // Mesure  
-            for (int x = 50; x < top_mesuring_pictureBox.Width; x += 50)  // Start at 50px. and draw line every 100px till it reaches the Picturebox end "Lenght"
-            {    
-                    
 
-                if(everySecond_Num != 0)
+            int buffer_left_corner = 23;
+
+            // Mesure - Horizontal  
+            for (int x = 73; x < top_mesuring_pictureBox.Width; x += 50)  // Start at 50px. and draw line every 100px till it reaches the Picturebox end "Lenght"
+            {
+
+               
+                //BLUE
+                if (everySecond_Num == 0)
                 {
-                    //----------------------------------------------------------------
 
-                    // Draw Line - Second - Green
-                    g.DrawLine(new Pen(new SolidBrush(Color.Lime), 1.0f), new Point(x, 0), new Point(x, 20)); // Pen is drawing the outter and Brush is filling the inner
-
-                    // Draw Text 
-                    using (Font font1 = new Font("Verdana", 12, FontStyle.Bold, GraphicsUnit.Pixel))
-                    {
-                        PointF pointF = new PointF(x, 10);
-                        e.Graphics.DrawString(x.ToString(), font1, Brushes.Lime, pointF);
-                    }
-                    everySecond_Num = 0; // Every Second = 0
-                    //----------------------------------------------------------------
-
-                }
-
-                else
-                {
-                    //----------------------------------------------------------------
-                    // Draw Line - First Blue
-                    g.DrawLine(new Pen(new SolidBrush(Color.Aqua), 2.0f), new Point(x, 0), new Point(x, 10)); // Pen is drawing the outter and Brush is filling the inner
+                    //-----------Draw Line - First BLUE-----------------------------------------------------  
+                    g.DrawLine(new Pen(new SolidBrush(Color.Aqua), 1.0f), new Point(x, 0), new Point(x, 10)); // Pen is drawing the outter and Brush is filling the inner
 
 
                     // Draw Text 
                     using (Font font1 = new Font("Verdana", 11, FontStyle.Bold, GraphicsUnit.Pixel))
                     {
                         PointF pointF = new PointF(x, 5);
-                        e.Graphics.DrawString(x.ToString(), font1, Brushes.Aqua, pointF);
+                        e.Graphics.DrawString((x - buffer_left_corner).ToString(), font1, Brushes.Aqua, pointF);
                     }
-                    everySecond_Num++; // Every Second ++
-                    //----------------------------------------------------------------
+                    everySecond_Num ++; // Every Second ++
+                    //--------------------------------------------------------------------------------------
 
                 }
 
+                else
+                {
 
+                    ////----------------Draw Line - Second - Green-----------------------------------------  
+                    g.DrawLine(new Pen(new SolidBrush(Color.Lime), 1.0f), new Point(x, 0), new Point(x, 20)); // Pen is drawing the outter and Brush is filling the inner
 
+                    //// Draw Text 
+                    using (Font font1 = new Font("Verdana", 12, FontStyle.Bold, GraphicsUnit.Pixel))
+                    {
+                        PointF pointF = new PointF(x, 10);
+                        e.Graphics.DrawString((x - buffer_left_corner).ToString(), font1, Brushes.Lime, pointF);
+                    }
+                    everySecond_Num = 0; // Every Second = 0
+                    ////---------------------------------------------------------------------------------- 
 
+                }
 
             }
 
@@ -177,23 +180,23 @@ namespace GUI
 
 
 
-                //// Mesure 100
-                //for (int x = 100; x < top_mesuring_pictureBox.Width; x += 100)  // Start at 50px. and draw line every 100px till it reaches the Picturebox end "Lenght"
-                //{
-                   //g.DrawLine(new Pen(new SolidBrush(Color.Red), 1.0f), new Point(x, 0), new Point(x, 20)); // Pen is drawing the outter and Brush is filling the inner
+            // Mesure 100
+            //for (int x = 100; x < top_mesuring_pictureBox.Width; x += 100)  // Start at 50px. and draw line every 100px till it reaches the Picturebox end "Lenght"
+            //{
+            //    g.DrawLine(new Pen(new SolidBrush(Color.Red), 1.0f), new Point(x, 0), new Point(x, 20)); // Pen is drawing the outter and Brush is filling the inner
 
 
 
-                     //// Draw "100"
-                     //using (Font font1 = new Font("Verdana", 12, FontStyle.Bold, GraphicsUnit.Pixel) )
-                     //{
-                         //PointF pointF = new PointF(x, 10);
-                         //e.Graphics.DrawString("100", font1, Brushes.Red, pointF);
-                     //}
-              
+            //    // Draw "100"
+            //    using (Font font1 = new Font("Verdana", 12, FontStyle.Bold, GraphicsUnit.Pixel))
+            //    {
+            //        PointF pointF = new PointF(x, 10);
+            //        e.Graphics.DrawString("100", font1, Brushes.Red, pointF);
+            //    }
 
-                //}
-          
+
+            //}
+
 
 
             //// ----------------
@@ -211,14 +214,88 @@ namespace GUI
             //    g.DrawLine(new Pen(new SolidBrush(Color.Red), 1.0f), new Point(x, 0), new Point(x, 5));
             //}
 
-                //g.DrawLine(new Pen(new SolidBrush(Color.Red), 2.0f), new Point(ruller_Location.X, 0), new Point(ruller_Location.X, 10));
+            //g.DrawLine(new Pen(new SolidBrush(Color.Red), 2.0f), new Point(ruller_Location.X, 0), new Point(ruller_Location.X, 10));
         }
 
-        // TOP MESURING-------------------------::END::  
+        // TOP MESURING-:::::::::::::::::END::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  
 
 
 
 
+
+
+
+        // Left MESURING-::::::::::::::::START:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  
+
+
+        //-------------Draw Small Lines---Vertical------------------------------------------------------------   
+        private void left_mesuring_pictureBox_Paint(object sender, PaintEventArgs e)
+        {
+            
+
+
+            int every_Second_Vertical = 0;
+
+            // Red small Lines
+            for (int y = 24; y < left_mesuring_pictureBox.Height; y += 25)
+            {
+               e.Graphics.DrawLine(new Pen(Color.Red, 1.0f), new Point(0,y), new Point(5,y));
+
+            }
+
+
+            // Mesure - Vertical
+               for (int y2 = 49; y2 < left_mesuring_pictureBox.Height; y2 += 50)
+               {
+
+                   if(every_Second_Vertical == 0)
+                   {
+                        e.Graphics.DrawLine(new Pen(Color.Aqua, 1.0f), new Point(0, y2), new Point(10 ,y2)); // Line Blue Vertical
+
+
+                       //// Draw Text 
+                       using (Font font1 = new Font("Verdana", 11, FontStyle.Bold, GraphicsUnit.Pixel))
+                       {
+
+                        System.Drawing.StringFormat drawFormat = new System.Drawing.StringFormat();
+                        drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
+
+                        PointF pointF = new PointF(3, y2 );
+                        e.Graphics.DrawString((y2 +1).ToString(), font1, Brushes.Aqua, pointF, drawFormat);
+
+                       }
+                        
+                        every_Second_Vertical++;   
+                   }
+
+                   else
+                   {
+
+                       e.Graphics.DrawLine(new Pen(Color.Lime, 1.0f), new Point(0, y2), new Point(20, y2));
+
+
+                        //// Draw Text 
+                        using (Font font1 = new Font("Verdana", 12, FontStyle.Bold, GraphicsUnit.Pixel))
+                        {
+                       
+                            System.Drawing.StringFormat drawFormat = new System.Drawing.StringFormat();
+                            drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
+                       
+                            PointF pointF = new PointF(8, y2);
+                            e.Graphics.DrawString((y2 + 1).ToString(), font1, Brushes.Lime, pointF, drawFormat);
+                       
+                        }
+                       
+
+                    every_Second_Vertical = 0;
+
+                   }
+
+
+               }
+
+        }
+        // Left MESURING-::::::::::::::::END:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::  
 
 
 
@@ -442,7 +519,7 @@ namespace GUI
             
         }
 
-
+           
         //:::::::::::::--RIGHT--TOOL--Panel:::::::::::::::::::END::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

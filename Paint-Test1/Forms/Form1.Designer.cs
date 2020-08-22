@@ -40,6 +40,7 @@ namespace GUI
             this.effectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.left_tool_panel = new System.Windows.Forms.Panel();
             this.left_mesuring_pictureBox = new System.Windows.Forms.PictureBox();
             this.top_mesuring_pictureBox = new System.Windows.Forms.PictureBox();
@@ -108,7 +109,8 @@ namespace GUI
             this.imageToolStripMenuItem,
             this.effectsToolStripMenuItem,
             this.viewToolStripMenuItem,
-            this.windowsToolStripMenuItem});
+            this.windowsToolStripMenuItem,
+            this.settingsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1357, 24);
@@ -151,6 +153,12 @@ namespace GUI
             this.windowsToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.windowsToolStripMenuItem.Text = "Windows";
             // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            // 
             // left_tool_panel
             // 
             this.left_tool_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(54)))), ((int)(((byte)(94)))));
@@ -171,6 +179,7 @@ namespace GUI
             this.left_mesuring_pictureBox.Size = new System.Drawing.Size(25, 637);
             this.left_mesuring_pictureBox.TabIndex = 5;
             this.left_mesuring_pictureBox.TabStop = false;
+            this.left_mesuring_pictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.left_mesuring_pictureBox_Paint);
             // 
             // top_mesuring_pictureBox
             // 
@@ -264,6 +273,7 @@ namespace GUI
         private System.Windows.Forms.ToolStripMenuItem effectsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem windowsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 }
 

@@ -97,9 +97,15 @@ namespace GUI
         {
 
             // Ruller - Moving Line Top
-            //e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Blue), 7.0f), new Point(ruller_Location.X + 25, 0), new Point(ruller_Location.X + 25, 25));
             e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Black), 5.0f), new Point(ruller_Location.X + 25, 0), new Point(ruller_Location.X + 25, 25));
-            e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Red), 3.0f), new Point(ruller_Location.X + 25, 0), new Point(ruller_Location.X + 25, 25));
+            e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Blue), 2.5f), new Point(ruller_Location.X + 25, 0), new Point(ruller_Location.X + 25, 25));
+            // The Red mesuring line is at the botttom of the method
+
+            // Ruller position to Bottom Left Label
+            ruller_X_label.Text = "X = " + (ruller_Location.X + 2).ToString();
+
+
+
 
 
             int everySecond_Num = 0; // Change Color Every Second
@@ -142,15 +148,12 @@ namespace GUI
             // Mesure - Horizontal  
             for (int x = 73; x < top_mesuring_pictureBox.Width; x += 50)  // Start at 50px. and draw line every 100px till it reaches the Picturebox end "Lenght"
             {
-
                
                 //Dark Violet
                 if (everySecond_Num == 0)
-                {
-
+                {    
                     //-----------Draw Line - First BLUE-----------------------------------------------------  
                     e.Graphics.DrawLine(new Pen(new SolidBrush(Color.FromArgb(156, 117, 154)), 1.0f), new Point(x, 0), new Point(x, 10)); // Pen is drawing the outter and Brush is filling the inner
-
 
                     // Draw Text 
                     using (Font font1 = new Font("Verdana", 11, FontStyle.Bold, GraphicsUnit.Pixel))
@@ -160,7 +163,6 @@ namespace GUI
                     }
                     everySecond_Num ++; // Every Second ++
                     //--------------------------------------------------------------------------------------
-
                 }
 
                 else
@@ -180,11 +182,15 @@ namespace GUI
 
                 }
 
-              
+
+                // red Mesuring Line - Moving Line on mouse move
+                e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Red), 1.0f), new Point(ruller_Location.X + 25, 0), new Point(ruller_Location.X + 25, 25));
+
+
             }
 
 
-           
+
 
 
 
@@ -243,7 +249,13 @@ namespace GUI
 
             // Ruller - Moving Line Left
             e.Graphics.DrawLine(new Pen(Color.Black, 10.0f), new Point(0, ruller_Location.Y), new Point(25, ruller_Location.Y));
-            e.Graphics.DrawLine(new Pen(Color.Orange, 2.0f), new Point(0, ruller_Location.Y), new Point(25, ruller_Location.Y));
+            //e.Graphics.DrawLine(new Pen(Color.Red, 2.5f), new Point(0, ruller_Location.Y), new Point(25, ruller_Location.Y));
+
+            // Yellow Line is at the bottom of the method
+
+
+            // Ruller position to Label
+            ruller_Y_label.Text = "Y = " + (ruller_Location.Y + 1);
 
 
 
@@ -307,7 +319,8 @@ namespace GUI
 
                }
 
-  
+            // Ruller Mesuring Line - Moves On Mouse Move
+            e.Graphics.DrawLine(new Pen(Color.Yellow, 1.0f), new Point(0, ruller_Location.Y), new Point(25, ruller_Location.Y));
 
 
         }

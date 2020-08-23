@@ -18,7 +18,7 @@ namespace GUI
         public Point current = new Point();
         public Point old = new Point();
         public Pen pen1 = new Pen(Color.Red, 5);
-        public Graphics g;
+        public Graphics Paint_Graphics; // Paint
         public bool isMouseMoving = false;
 
 
@@ -46,13 +46,7 @@ namespace GUI
         public Form1()
         {
             InitializeComponent();
-
-
-            // Paint
-            g = workplace_pictureBox.CreateGraphics();
-            pen1.SetLineCap(System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.DashCap.Round);
-
-
+          
             //// Assign Right Panel
             //Resizable_Panel Right_ToolPanel_Resizable = new Resizable_Panel();
             //Right_ToolPanel_Resizable.Right_Tool_Panel = right_tool_panel;
@@ -353,9 +347,14 @@ namespace GUI
         // Mouse Down - WORKPLACE
         private void workplace_pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
+            // Paint
+            Paint_Graphics = workplace_pictureBox.CreateGraphics();
+            pen1.SetLineCap(System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.LineCap.Round, System.Drawing.Drawing2D.DashCap.Round);
+
             if (isMouseMoving == false)
             {
-                g.DrawLine(pen1, e.Location, new Point(e.Location.X - 1, e.Location.Y - 1));
+                //e.Graphics.FillRectangle(aBrush, x, y, 1, 1);
+                Paint_Graphics.FillRectangle(new SolidBrush(Color.Red), e.Location.X -1 , e.Location.Y - 1, 15, 15);
             }
 
             old = e.Location;
@@ -376,7 +375,7 @@ namespace GUI
             if (e.Button == MouseButtons.Left)
             {
                 current = e.Location;
-                g.DrawLine(pen1, old, current);
+                Paint_Graphics.DrawLine(pen1, old, current);
                 old = current;
             }
 
@@ -572,8 +571,8 @@ namespace GUI
         {
             
         }
+      
 
-          
         //:::::::::::::--RIGHT--TOOL--Panel:::::::::::::::::::END::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

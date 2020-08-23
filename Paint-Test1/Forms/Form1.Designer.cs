@@ -47,10 +47,10 @@ namespace GUI
             this.main_holder_panel = new System.Windows.Forms.Panel();
             this.workplace_pictureBox = new System.Windows.Forms.PictureBox();
             this.bottom_info_panel = new System.Windows.Forms.Panel();
-            this.ruller_X_label = new System.Windows.Forms.Label();
-            this.ruller_Y_label = new System.Windows.Forms.Label();
-            this.X_label = new System.Windows.Forms.Label();
             this.Y_label = new System.Windows.Forms.Label();
+            this.X_label = new System.Windows.Forms.Label();
+            this.ruller_Y_label = new System.Windows.Forms.Label();
+            this.ruller_X_label = new System.Windows.Forms.Label();
             this.right_tool_panel.SuspendLayout();
             this.top_tool_panel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -200,7 +200,7 @@ namespace GUI
             // 
             // main_holder_panel
             // 
-            this.main_holder_panel.BackColor = System.Drawing.Color.White;
+            this.main_holder_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.main_holder_panel.Controls.Add(this.workplace_pictureBox);
             this.main_holder_panel.Controls.Add(this.left_mesuring_pictureBox);
             this.main_holder_panel.Controls.Add(this.top_mesuring_pictureBox);
@@ -216,6 +216,7 @@ namespace GUI
             // 
             // workplace_pictureBox
             // 
+            this.workplace_pictureBox.BackColor = System.Drawing.Color.White;
             this.workplace_pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.workplace_pictureBox.Location = new System.Drawing.Point(146, 94);
             this.workplace_pictureBox.Name = "workplace_pictureBox";
@@ -238,27 +239,16 @@ namespace GUI
             this.bottom_info_panel.Size = new System.Drawing.Size(1357, 27);
             this.bottom_info_panel.TabIndex = 8;
             // 
-            // ruller_X_label
+            // Y_label
             // 
-            this.ruller_X_label.AutoSize = true;
-            this.ruller_X_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ruller_X_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ruller_X_label.Location = new System.Drawing.Point(42, 5);
-            this.ruller_X_label.Name = "ruller_X_label";
-            this.ruller_X_label.Size = new System.Drawing.Size(15, 13);
-            this.ruller_X_label.TabIndex = 0;
-            this.ruller_X_label.Text = "X";
-            // 
-            // ruller_Y_label
-            // 
-            this.ruller_Y_label.AutoSize = true;
-            this.ruller_Y_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ruller_Y_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ruller_Y_label.Location = new System.Drawing.Point(121, 5);
-            this.ruller_Y_label.Name = "ruller_Y_label";
-            this.ruller_Y_label.Size = new System.Drawing.Size(15, 13);
-            this.ruller_Y_label.TabIndex = 1;
-            this.ruller_Y_label.Text = "Y";
+            this.Y_label.AutoSize = true;
+            this.Y_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Y_label.ForeColor = System.Drawing.Color.Lime;
+            this.Y_label.Location = new System.Drawing.Point(93, 5);
+            this.Y_label.Name = "Y_label";
+            this.Y_label.Size = new System.Drawing.Size(26, 13);
+            this.Y_label.TabIndex = 3;
+            this.Y_label.Text = "Y =";
             // 
             // X_label
             // 
@@ -271,16 +261,27 @@ namespace GUI
             this.X_label.TabIndex = 2;
             this.X_label.Text = "X =";
             // 
-            // Y_label
+            // ruller_Y_label
             // 
-            this.Y_label.AutoSize = true;
-            this.Y_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Y_label.ForeColor = System.Drawing.Color.Lime;
-            this.Y_label.Location = new System.Drawing.Point(93, 5);
-            this.Y_label.Name = "Y_label";
-            this.Y_label.Size = new System.Drawing.Size(26, 13);
-            this.Y_label.TabIndex = 3;
-            this.Y_label.Text = "Y =";
+            this.ruller_Y_label.AutoSize = true;
+            this.ruller_Y_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ruller_Y_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ruller_Y_label.Location = new System.Drawing.Point(121, 5);
+            this.ruller_Y_label.Name = "ruller_Y_label";
+            this.ruller_Y_label.Size = new System.Drawing.Size(15, 13);
+            this.ruller_Y_label.TabIndex = 1;
+            this.ruller_Y_label.Text = "Y";
+            // 
+            // ruller_X_label
+            // 
+            this.ruller_X_label.AutoSize = true;
+            this.ruller_X_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ruller_X_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ruller_X_label.Location = new System.Drawing.Point(42, 5);
+            this.ruller_X_label.Name = "ruller_X_label";
+            this.ruller_X_label.Size = new System.Drawing.Size(15, 13);
+            this.ruller_X_label.TabIndex = 0;
+            this.ruller_X_label.Text = "X";
             // 
             // Form1
             // 

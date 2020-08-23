@@ -171,7 +171,7 @@ namespace GUI
             // 
             // left_mesuring_pictureBox
             // 
-            this.left_mesuring_pictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
+            this.left_mesuring_pictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.left_mesuring_pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.left_mesuring_pictureBox.Dock = System.Windows.Forms.DockStyle.Left;
             this.left_mesuring_pictureBox.Location = new System.Drawing.Point(121, 94);
@@ -183,7 +183,7 @@ namespace GUI
             // 
             // top_mesuring_pictureBox
             // 
-            this.top_mesuring_pictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(84)))), ((int)(((byte)(84)))));
+            this.top_mesuring_pictureBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
             this.top_mesuring_pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.top_mesuring_pictureBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.top_mesuring_pictureBox.Location = new System.Drawing.Point(121, 69);

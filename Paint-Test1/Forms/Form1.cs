@@ -97,7 +97,9 @@ namespace GUI
         {
 
             // Ruller - Moving Line Top
-            e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Blue), 5.0f), new Point(ruller_Location.X + 25, 0), new Point(ruller_Location.X + 25, 25));
+            //e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Blue), 7.0f), new Point(ruller_Location.X + 25, 0), new Point(ruller_Location.X + 25, 25));
+            e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Black), 5.0f), new Point(ruller_Location.X + 25, 0), new Point(ruller_Location.X + 25, 25));
+            e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Red), 3.0f), new Point(ruller_Location.X + 25, 0), new Point(ruller_Location.X + 25, 25));
 
 
             int everySecond_Num = 0; // Change Color Every Second
@@ -123,7 +125,7 @@ namespace GUI
 
 
 
-            //-------------Draw Small Lines------Horizontal---------------------------------------------------------   
+            //-------------Draw Small Lines---RED---Horizontal---------------------------------------------------------   
             for (int x1 = 23; x1 < top_mesuring_pictureBox.Width; x1 += 25)
             {
                 // Draw Line - Small
@@ -142,19 +144,19 @@ namespace GUI
             {
 
                
-                //BLUE
+                //Dark Violet
                 if (everySecond_Num == 0)
                 {
 
                     //-----------Draw Line - First BLUE-----------------------------------------------------  
-                    e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Aqua), 1.0f), new Point(x, 0), new Point(x, 10)); // Pen is drawing the outter and Brush is filling the inner
+                    e.Graphics.DrawLine(new Pen(new SolidBrush(Color.FromArgb(156, 117, 154)), 1.0f), new Point(x, 0), new Point(x, 10)); // Pen is drawing the outter and Brush is filling the inner
 
 
                     // Draw Text 
                     using (Font font1 = new Font("Verdana", 11, FontStyle.Bold, GraphicsUnit.Pixel))
                     {
                         PointF pointF = new PointF(x, 5);
-                        e.Graphics.DrawString((x - buffer_left_corner).ToString(), font1, Brushes.Aqua, pointF);
+                        e.Graphics.DrawString((x - buffer_left_corner).ToString(), font1, new SolidBrush(Color.FromArgb(156, 117, 154)), pointF);
                     }
                     everySecond_Num ++; // Every Second ++
                     //--------------------------------------------------------------------------------------
@@ -164,14 +166,14 @@ namespace GUI
                 else
                 {
 
-                    ////----------------Draw Line - Second - Green-----------------------------------------  
-                    e.Graphics.DrawLine(new Pen(new SolidBrush(Color.Lime), 1.0f), new Point(x, 0), new Point(x, 20)); // Pen is drawing the outter and Brush is filling the inner
+                    ////----------------Draw Line - Second - Blue-----------------------------------------  
+                    e.Graphics.DrawLine(new Pen(new SolidBrush(Color.FromArgb(105, 193, 255)), 1.0f), new Point(x, 0), new Point(x, 20)); // Pen is drawing the outter and Brush is filling the inner
 
                     //// Draw Text 
                     using (Font font1 = new Font("Verdana", 12, FontStyle.Bold, GraphicsUnit.Pixel))
                     {
                         PointF pointF = new PointF(x, 10);
-                        e.Graphics.DrawString((x - buffer_left_corner).ToString(), font1, Brushes.Lime, pointF);
+                        e.Graphics.DrawString((x - buffer_left_corner).ToString(), font1, new SolidBrush(Color.FromArgb(105, 193, 255)), pointF);
                     }
                     everySecond_Num = 0; // Every Second = 0
                     ////---------------------------------------------------------------------------------- 
@@ -240,7 +242,8 @@ namespace GUI
         {
 
             // Ruller - Moving Line Left
-            e.Graphics.DrawLine(new Pen(Color.Red, 15.0f), new Point(0, ruller_Location.Y), new Point(15, ruller_Location.Y));
+            e.Graphics.DrawLine(new Pen(Color.Black, 10.0f), new Point(0, ruller_Location.Y), new Point(25, ruller_Location.Y));
+            e.Graphics.DrawLine(new Pen(Color.Orange, 2.0f), new Point(0, ruller_Location.Y), new Point(25, ruller_Location.Y));
 
 
 
@@ -261,7 +264,7 @@ namespace GUI
 
                    if(every_Second_Vertical == 0)
                    {
-                        e.Graphics.DrawLine(new Pen(Color.Aqua, 1.0f), new Point(0, y2), new Point(10 ,y2)); // Line Blue Vertical
+                        e.Graphics.DrawLine(new Pen(Color.FromArgb(156, 117, 154), 1.0f), new Point(0, y2), new Point(10 ,y2)); // Line Blue Vertical
 
 
                        //// Draw Text - Blue - Vertical
@@ -272,7 +275,7 @@ namespace GUI
                         drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
 
                         PointF pointF = new PointF(3, y2 );
-                        e.Graphics.DrawString((y2 +1).ToString(), font1, Brushes.Aqua, pointF, drawFormat);
+                        e.Graphics.DrawString((y2 +1).ToString(), font1, new SolidBrush(Color.FromArgb(156, 117, 154)), pointF, drawFormat);
 
                        }
                         
@@ -282,18 +285,17 @@ namespace GUI
                    else
                    {
 
-                       e.Graphics.DrawLine(new Pen(Color.Lime, 1.0f), new Point(0, y2), new Point(20, y2));
+                       e.Graphics.DrawLine(new Pen(Color.FromArgb(105, 193, 255), 1.0f), new Point(0, y2), new Point(20, y2));
 
 
                         // Draw Text  - Green - Vertical
                         using (Font font1 = new Font("Verdana", 12, FontStyle.Bold, GraphicsUnit.Pixel))
-                        {
-                       
+                        {   
                             System.Drawing.StringFormat drawFormat = new System.Drawing.StringFormat();
                             drawFormat.FormatFlags = StringFormatFlags.DirectionVertical;
                        
                             PointF pointF = new PointF(8, y2);
-                            e.Graphics.DrawString((y2 + 1).ToString(), font1, Brushes.Lime, pointF, drawFormat);
+                            e.Graphics.DrawString((y2 + 1).ToString(), font1, new SolidBrush(Color.FromArgb(105, 193, 255)), pointF, drawFormat);
                        
                         }
                        

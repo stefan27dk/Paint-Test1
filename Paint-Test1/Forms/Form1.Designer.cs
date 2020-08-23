@@ -49,6 +49,8 @@ namespace GUI
             this.bottom_info_panel = new System.Windows.Forms.Panel();
             this.ruller_X_label = new System.Windows.Forms.Label();
             this.ruller_Y_label = new System.Windows.Forms.Label();
+            this.X_label = new System.Windows.Forms.Label();
+            this.Y_label = new System.Windows.Forms.Label();
             this.right_tool_panel.SuspendLayout();
             this.top_tool_panel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -226,6 +228,8 @@ namespace GUI
             // bottom_info_panel
             // 
             this.bottom_info_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(44)))), ((int)(((byte)(44)))));
+            this.bottom_info_panel.Controls.Add(this.Y_label);
+            this.bottom_info_panel.Controls.Add(this.X_label);
             this.bottom_info_panel.Controls.Add(this.ruller_Y_label);
             this.bottom_info_panel.Controls.Add(this.ruller_X_label);
             this.bottom_info_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -239,7 +243,7 @@ namespace GUI
             this.ruller_X_label.AutoSize = true;
             this.ruller_X_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ruller_X_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ruller_X_label.Location = new System.Drawing.Point(131, 5);
+            this.ruller_X_label.Location = new System.Drawing.Point(42, 5);
             this.ruller_X_label.Name = "ruller_X_label";
             this.ruller_X_label.Size = new System.Drawing.Size(15, 13);
             this.ruller_X_label.TabIndex = 0;
@@ -250,11 +254,33 @@ namespace GUI
             this.ruller_Y_label.AutoSize = true;
             this.ruller_Y_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ruller_Y_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ruller_Y_label.Location = new System.Drawing.Point(230, 5);
+            this.ruller_Y_label.Location = new System.Drawing.Point(121, 5);
             this.ruller_Y_label.Name = "ruller_Y_label";
             this.ruller_Y_label.Size = new System.Drawing.Size(15, 13);
             this.ruller_Y_label.TabIndex = 1;
             this.ruller_Y_label.Text = "Y";
+            // 
+            // X_label
+            // 
+            this.X_label.AutoSize = true;
+            this.X_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.X_label.ForeColor = System.Drawing.Color.Red;
+            this.X_label.Location = new System.Drawing.Point(16, 5);
+            this.X_label.Name = "X_label";
+            this.X_label.Size = new System.Drawing.Size(26, 13);
+            this.X_label.TabIndex = 2;
+            this.X_label.Text = "X =";
+            // 
+            // Y_label
+            // 
+            this.Y_label.AutoSize = true;
+            this.Y_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Y_label.ForeColor = System.Drawing.Color.Lime;
+            this.Y_label.Location = new System.Drawing.Point(93, 5);
+            this.Y_label.Name = "Y_label";
+            this.Y_label.Size = new System.Drawing.Size(26, 13);
+            this.Y_label.TabIndex = 3;
+            this.Y_label.Text = "Y =";
             // 
             // Form1
             // 
@@ -305,6 +331,8 @@ namespace GUI
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.Label ruller_Y_label;
         private System.Windows.Forms.Label ruller_X_label;
+        private System.Windows.Forms.Label Y_label;
+        private System.Windows.Forms.Label X_label;
     }
 }
 

@@ -102,8 +102,18 @@ namespace GUI
             // The Red mesuring line is at the botttom of the method
 
             // Ruller position to Bottom Left Label
-            ruller_X_label.Text = "X = " + (ruller_Location.X + 2).ToString();
+            ruller_X_label.Text = (ruller_Location.X + 2).ToString();
 
+
+
+
+            // Draw X on the Ruller
+            // Draw Text 
+            using (Font font1 = new Font("Verdana", 9, FontStyle.Bold, GraphicsUnit.Pixel))
+            {
+                PointF pointF = new PointF(30, 5);
+                e.Graphics.DrawString("X", font1, Brushes.Red, pointF);  // The "0"
+            }
 
 
 
@@ -123,11 +133,11 @@ namespace GUI
                 PointF pointF = new PointF(8, 5);
                 e.Graphics.DrawString("0", font1, Brushes.Orange, pointF);  // The "0"
             }
-            
+
             // Draw - "0" --------::END::-----------------------------------------
 
 
-
+            
 
 
 
@@ -255,8 +265,17 @@ namespace GUI
 
 
             // Ruller position to Label
-            ruller_Y_label.Text = "Y = " + (ruller_Location.Y + 1);
+            ruller_Y_label.Text = (ruller_Location.Y + 1).ToString();
 
+
+
+            // Draw Y on the Ruller
+            // Draw Text 
+            using (Font font1 = new Font("Verdana", 9, FontStyle.Bold, GraphicsUnit.Pixel))
+            {   
+                PointF pointF = new PointF(5, 5);
+                e.Graphics.DrawString("Y", font1, Brushes.Lime, pointF);  // The "0"
+            }
 
 
 
@@ -554,7 +573,7 @@ namespace GUI
             
         }
 
-           
+          
         //:::::::::::::--RIGHT--TOOL--Panel:::::::::::::::::::END::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
